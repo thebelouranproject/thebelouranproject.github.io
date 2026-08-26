@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 240" fill="none" width="100%" height="100%">
+  <!-- Belouran Vector Emblem Logo -->
+  <g stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Bottom Base Line -->
+    <path d="M 28 215 L 172 215" stroke-width="12" />
+    
+    <!-- Hood Outline: Base to Beak, Beak Tip, Beak to Apex -->
+    <path d="M 32 215 L 75 130 L 18 122 L 132 22" stroke-width="12" />
+    
+    <!-- Inner Hanging Stem & Eye/Dot -->
+    <path d="M 132 22 L 132 88" stroke-width="12" />
+    <circle cx="132" cy="90" r="13" fill="currentColor" stroke="none" />
+    
+    <!-- Right Vertical Bar & Open Ring -->
+    <path d="M 172 215 L 172 70" stroke-width="12" />
+    <circle cx="172" cy="50" r="16" stroke-width="10" fill="none" />
+  </g>
+</svg>

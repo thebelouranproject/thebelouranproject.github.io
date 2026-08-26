@@ -1,0 +1,149 @@
+.page-home {
+  min-height: calc(100vh - var(--header-height));
+}
+
+/* ─── HERO ─── */
+.home-hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 60px 40px 40px;
+  border-bottom: 1px solid var(--border-color);
+  background: radial-gradient(circle at center 30%, rgba(0, 255, 136, 0.04) 0%, transparent 70%);
+  position: relative;
+}
+
+.hero-emblem {
+  margin-bottom: 16px;
+  filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.2));
+  transition: transform 0.3s ease;
+}
+
+.hero-emblem:hover {
+  transform: scale(1.05);
+}
+
+.hero-brand-title {
+  font-family: var(--font-sans);
+  font-size: clamp(32px, 6vw, 64px);
+  font-weight: 900;
+  letter-spacing: 0.35em;
+  color: #ffffff;
+  margin: 0 0 12px 0;
+  text-indent: 0.35em;
+  text-transform: uppercase;
+}
+
+.hero-manifesto {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.25em;
+  color: rgba(255, 255, 255, 0.6);
+  max-width: 750px;
+  margin: 0 0 28px 0;
+  text-transform: uppercase;
+  line-height: 1.6;
+}
+
+.hero-text-wrap {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.hero-label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  color: var(--accent-dim);
+}
+
+.hero-divider {
+  color: var(--accent-dimmer);
+  font-size: 11px;
+}
+
+.hero-scroll-hint {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  color: var(--accent-dimmer);
+  animation: bob 2s ease-in-out infinite;
+}
+
+@keyframes bob {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(5px); }
+}
+
+/* ─── FOOTER ─── */
+.site-footer {
+  border-top: 1px solid var(--border-color);
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.footer-brand-wrap {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.footer-brand-name {
+  font-family: var(--font-sans);
+  font-weight: 900;
+  font-size: 16px;
+  letter-spacing: 0.2em;
+  color: #ffffff;
+}
+
+.footer-nav {
+  display: flex;
+  gap: 28px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.footer-link {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--accent-dim);
+  transition: color 0.2s;
+}
+
+.footer-link:hover {
+  color: var(--accent-color);
+}
+
+.footer-copy {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--accent-dimmer);
+  letter-spacing: 0.08em;
+}
+
+@media (max-width: 700px) {
+  .home-hero,
+  .site-footer {
+    padding: 30px 20px;
+  }
+
+  .hero-manifesto {
+    font-size: 10px;
+    letter-spacing: 0.15em;
+  }
+
+  .footer-nav {
+    gap: 16px;
+  }
+}
