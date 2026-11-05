@@ -6,6 +6,7 @@ import BelouranLogo from '../BelouranLogo/BelouranLogo';
 import './Header.css';
 
 const NAV_LINKS = [
+  { label: 'MANIFESTO', href: '/manifesto' },
   { label: 'LOOKS', href: '/looks' },
   { label: 'VIDEO', href: '/video' },
   { label: 'STORES', href: '/stores' },
@@ -49,7 +50,11 @@ export default function Header() {
             {/* Nav links — desktop */}
             <nav className="header-nav">
               {NAV_LINKS.map((link) => (
-                <Link key={link.label} to={link.href} className="nav-link">
+                <Link
+                  key={link.label}
+                  to={link.href}
+                  className={`nav-link${location.pathname === link.href ? ' active' : ''}`}
+                >
                   {link.label}
                 </Link>
               ))}
@@ -57,7 +62,6 @@ export default function Header() {
 
             {/* Live dot */}
             <a
-              href="https://000.cavempt.com"
               className="live-dot"
               target="_blank"
               rel="noopener noreferrer"

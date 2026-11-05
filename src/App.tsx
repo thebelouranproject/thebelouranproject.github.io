@@ -1,8 +1,10 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { CartProvider } from './context/CartContext';
 import Header from './components/Header/Header';
+import Footer from './components/Footer/Footer';
 import Home from './pages/Home';
 import ProductDetail from './pages/ProductDetail';
+import Manifesto from './pages/Manifesto';
 import './index.css';
 
 function App() {
@@ -13,6 +15,7 @@ function App() {
         <div className="layout">
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/manifesto" element={<Manifesto />} />
             <Route path="/products/:slug" element={<ProductDetail />} />
             {/* Placeholder routes */}
             <Route path="/looks" element={<PlaceholderPage title="LOOKS" />} />
@@ -33,16 +36,27 @@ function PlaceholderPage({ title }: { title: string }) {
     <div
       style={{
         display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        minHeight: '60vh',
-        fontFamily: 'var(--font-mono)',
-        fontSize: '13px',
-        letterSpacing: '0.1em',
-        color: 'rgba(255,255,255,0.3)',
+        flexDirection: 'column',
+        justifyContent: 'space-between',
+        minHeight: 'calc(100vh - var(--header-height))',
       }}
     >
-      {title}
+      <div
+        style={{
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          flex: 1,
+          minHeight: '60vh',
+          fontFamily: 'var(--font-mono)',
+          fontSize: '13px',
+          letterSpacing: '0.1em',
+          color: 'rgba(255,255,255,0.3)',
+        }}
+      >
+        {title}
+      </div>
+      <Footer />
     </div>
   );
 }

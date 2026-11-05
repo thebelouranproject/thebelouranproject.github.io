@@ -25,6 +25,7 @@ Belouran-Webshop/
 │   ├── components/         # Reusable UI components
 │   │   ├── BelouranLogo/   # SVG & branding logos
 │   │   ├── Cart/           # Drawer cart modal & item rows
+│   │   ├── Footer/         # Site footer & navigation links
 │   │   ├── Header/         # Navigation header & cart trigger
 │   │   ├── ProductCard/    # Grid item presentation & hover states
 │   │   └── ProductGrid/    # Layout grid for catalog display
@@ -34,6 +35,7 @@ Belouran-Webshop/
 │   │   └── products.ts     # Mock product data source
 │   ├── pages/              # Route views
 │   │   ├── Home.tsx / .css           # Main catalog / hero page
+│   │   ├── Manifesto.tsx / .css      # Brand manifesto page
 │   │   └── ProductDetail.tsx / .css  # Product detail view
 │   ├── types/
 │   │   └── index.ts        # Core TypeScript interfaces (Product, CartItem, CartState)
