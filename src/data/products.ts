@@ -1,5 +1,4 @@
 import type { Product } from '../types';
-import californiaImg from '../../dist/assets/belouran-california-dreaming-zip-up.png';
 
 export const products: Product[] = [
   {
