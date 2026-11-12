@@ -24,8 +24,15 @@
 }
 
 @keyframes fade-in {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .back-btn {
@@ -149,6 +156,7 @@
   max-width: 360px;
   border-top: 1px solid var(--border-color);
   padding-top: 20px;
+  white-space: pre-line;
 }
 
 /* ─── SIZE SELECTOR ─── */
@@ -211,9 +219,19 @@
 }
 
 @keyframes shake {
-  0%, 100% { transform: translateX(0); }
-  25% { transform: translateX(-4px); }
-  75% { transform: translateX(4px); }
+
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+
+  25% {
+    transform: translateX(-4px);
+  }
+
+  75% {
+    transform: translateX(4px);
+  }
 }
 
 /* ─── ADD TO CART ─── */

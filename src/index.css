@@ -1,7 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;600;700;900&display=swap');
 
 /* ─── RESET & BASE ─── */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -12,12 +14,13 @@
   --bg-color-mid: #111111;
   --surface: #1a1a1a;
   --surface-2: #222222;
-  --accent-color: #ffffff;
-  --accent-dim: rgba(255, 255, 255, 0.6);
-  --accent-dimmer: rgba(255, 255, 255, 0.15);
+  --logo-color: #DFD0B8;
+  --accent-color: var(--logo-color);
+  --accent-dim: rgba(223, 208, 184, 0.6);
+  --accent-dimmer: rgba(223, 208, 184, 0.15);
   --brand-blue: #2b3990;
   --checkout-red: #e60000;
-  --border-color: rgba(255, 255, 255, 0.12);
+  --border-color: rgba(223, 208, 184, 0.12);
   --header-height: 50px;
   --cart-width: 420px;
   --font-mono: 'Space Mono', monospace;
@@ -66,9 +69,21 @@ img {
 }
 
 /* ─── SCROLLBAR ─── */
-::-webkit-scrollbar { width: 4px; }
-::-webkit-scrollbar-track { background: transparent; }
-::-webkit-scrollbar-thumb { background: var(--surface-2); border-radius: 2px; }
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--surface-2);
+  border-radius: 2px;
+}
 
 /* ─── SELECTION ─── */
-::selection { background: var(--brand-blue); color: #fff; }
+::selection {
+  background: var(--brand-blue);
+  color: #fff;
+}

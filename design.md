@@ -80,7 +80,7 @@ This document provides a comprehensive, structured design specification for **Be
 ### 4.2 Rotating Emitter Ring (`ProductCard.tsx`)
 - **ViewBox**: `0 0 200 200`
 - **SVG Text Path**: Circular path (`d="M 100,100 m -78,0 a 78,78 0 1,1 156,0 a 78,78 0 1,1 -156,0"`)
-- **Content**: Repeated uppercase metadata string (e.g. `PRODUCT NAME · C.E · S30 · COLLECTION · ` repeated 6 times).
+- **Content**: Repeated uppercase metadata string (e.g. `SOLD OUT · PRODUCT NAME · S30 · COLLECTION · ` repeated 6 times).
 - **Animation**: Continuous 40s 360-degree linear rotation (`@keyframes ring-spin`).
 - **Color Accent**: Per-product custom `emitterColor` (e.g., `#00ff88`, `#ff0055`, `#00e1ff`, `#ffaa00`).
 

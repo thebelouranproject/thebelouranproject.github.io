@@ -55,7 +55,7 @@ export default function ProductCard({ product, index }: Props) {
     animationDelay: `${index * 0.05}s`,
   } as React.CSSProperties;
 
-  const ringText = `${product.name} · C.E · S30 · ${product.collection}`;
+  const ringText = `${product.soldOut ? 'SOLD OUT ·' : ""} ${product.name} · ${product.collection}`;
 
   return (
     <Link

@@ -15,13 +15,13 @@ export default function Home() {
         <h1 className="hero-brand-title">BELOURAN</h1>
         <Link to="/manifesto" className="hero-manifesto-link">
           <p className="hero-manifesto">
-            LIVING SITUATIONS CAN BE CHANGED &nbsp;·&nbsp; CREATION IS REAL &nbsp;·&nbsp; REST WITHIN SO WITHOUT
+            LIVING SITUATIONS CAN BE CHANGED · CREATION IS REAL · REST WITHIN SO WITHOUT
           </p>
         </Link>
         <div className="hero-text-wrap">
-          <span className="hero-label">BELOURAN SS30</span>
+          <span className="hero-label">BELOURAN FW26</span>
           <span className="hero-divider">·</span>
-          <span className="hero-label">NEW COLLECTION</span>
+          {/* <span className="hero-label">NEW COLLECTION</span> */}
         </div>
         <div className="hero-scroll-hint">SCROLL ↓</div>
       </div>
