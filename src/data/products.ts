@@ -7,9 +7,9 @@ export const products: Product[] = [
     name: 'BELOURAN CALIFORNIA DREAMING ZIP-UP',
     price: 40,
     currency: 'USD',
-    image: '/brand/belouran-california-dreaming-zip-up.png',
+    image: 'brand/belouran-california-dreaming-zip-up.png',
     images: [
-      '/brand/belouran-california-dreaming-zip-up.png',
+      'brand/belouran-california-dreaming-zip-up.png',
     ],
     category: 'ZIP-UP',
     collection: 'FW26',
