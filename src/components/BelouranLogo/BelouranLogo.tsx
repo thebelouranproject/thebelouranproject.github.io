@@ -1,5 +1,5 @@
 import React from 'react';
-import logoSvg from '/brand/belouran-logo.svg?url';
+import logoSvg from '../../assets/belouran-logo.svg?url';
 
 interface BelouranLogoProps extends React.SVGProps<SVGSVGElement> {
   size?: number | string;

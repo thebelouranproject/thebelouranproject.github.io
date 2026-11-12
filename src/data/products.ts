@@ -1,4 +1,12 @@
 import type { Product } from '../types';
+import belouranCaliforniaDreamingZipUp from '../assets/belouran-california-dreaming-zip-up.png';
+import belouranDawgTee from '../assets/belouran-dawg-tee.png';
+import belouranScaryfaceTee from '../assets/belouran-scaryface-tee.png';
+import belouranPunkJacket from '../assets/belouran-punk-jacket.png';
+import belouranBaggyMudJeans from '../assets/belouran-baggy-mud-jeans.png';
+import belouranTieDyeTee from '../assets/belouran-tie-dye-tee.png';
+import belouranAngelPoster from '../assets/belouran-angel-poster.png';
+import greyVibesPoster from '../assets/grey-vibes-poster.png';
 
 export const products: Product[] = [
   {
@@ -7,9 +15,9 @@ export const products: Product[] = [
     name: 'BELOURAN CALIFORNIA DREAMING ZIP-UP',
     price: 40,
     currency: 'USD',
-    image: '../../dist/assets/belouran-california-dreaming-zip-up.png',
+    image: belouranCaliforniaDreamingZipUp,
     images: [
-      '../../dist/assets/belouran-california-dreaming-zip-up.png',
+      belouranCaliforniaDreamingZipUp,
     ],
     category: 'ZIP-UP',
     collection: 'FW26',
@@ -24,9 +32,9 @@ export const products: Product[] = [
     name: 'BELOURAN DAWG TEE',
     price: 75,
     currency: 'USD',
-    image: '../../dist/assets/belouran-dawg-tee.png',
+    image: belouranDawgTee,
     images: [
-      '../../dist/assets/belouran-dawg-tee.png',
+      belouranDawgTee,
     ],
     category: 'T-SHIRTS',
     collection: 'FW26',
@@ -41,9 +49,9 @@ export const products: Product[] = [
     name: 'BELOURAN SCARYFACE TEE',
     price: 75,
     currency: 'USD',
-    image: '../../dist/assets/belouran-scaryface-tee.png',
+    image: belouranScaryfaceTee,
     images: [
-      '../../dist/assets/belouran-scaryface-tee.png',
+      belouranScaryfaceTee,
     ],
     category: 'T-SHIRTS',
     collection: 'FW26',
@@ -59,9 +67,9 @@ export const products: Product[] = [
     name: 'BELOURAN PUNK JACKET',
     price: 275,
     currency: 'USD',
-    image: '../../dist/assets/belouran-punk-jacket.png',
+    image: belouranPunkJacket,
     images: [
-      '../../dist/assets/belouran-punk-jacket.png',
+      belouranPunkJacket,
     ],
     category: 'JACKETS',
     collection: 'FW26',
@@ -76,9 +84,9 @@ export const products: Product[] = [
     name: 'BELOURAN BAGGY MUD JEANS',
     price: 195,
     currency: 'USD',
-    image: '../../dist/assets/belouran-baggy-mud-jeans.png',
+    image: belouranBaggyMudJeans,
     images: [
-      '../../dist/assets/belouran-baggy-mud-jeans.png',
+      belouranBaggyMudJeans,
     ],
     category: 'JEANS',
     collection: 'FW26',
@@ -98,9 +106,9 @@ export const products: Product[] = [
     name: 'BELOURAN TIE DYE TEE',
     price: 110,
     currency: 'USD',
-    image: '../../dist/assets/belouran-tie-dye-tee.png',
+    image: belouranTieDyeTee,
     images: [
-      '../../dist/assets/belouran-tie-dye-tee.png',
+      belouranTieDyeTee,
     ],
     category: 'T-SHIRTS',
     collection: 'FW26',
@@ -115,9 +123,9 @@ export const products: Product[] = [
     name: 'BELOURAN ANGEL POSTER',
     price: 35,
     currency: 'USD',
-    image: '../../dist/assets/belouran-angel-poster.png',
+    image: belouranAngelPoster,
     images: [
-      '../../dist/assets/belouran-angel-poster.png',
+      belouranAngelPoster,
     ],
     category: 'POSTERS',
     collection: 'ETERNAL',
@@ -132,9 +140,9 @@ export const products: Product[] = [
     name: 'BELOURAN GREY VIBES POSTER',
     price: 35,
     currency: 'USD',
-    image: '../../dist/assets/grey-vibes-poster.png',
+    image: greyVibesPoster,
     images: [
-      '../../dist/assets/grey-vibes-poster.png',
+      greyVibesPoster,
     ],
     category: 'POSTERS',
     collection: 'ETERNAL',
