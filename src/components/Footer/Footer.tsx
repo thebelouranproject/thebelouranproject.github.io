@@ -1,3 +1,4 @@
+import { useMemo } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import BelouranLogo from '../BelouranLogo/BelouranLogo';
 import './Footer.css';
@@ -13,6 +14,7 @@ const FOOTER_LINKS = [
 
 export default function Footer() {
   const location = useLocation();
+  const currentYear = useMemo(() => new Date().getFullYear(), []);
 
   return (
     <footer className="site-footer">
@@ -32,7 +34,7 @@ export default function Footer() {
         ))}
       </div>
       <p className="footer-copy">
-        © {new Date().getFullYear()} BELOURAN — ALL RIGHTS RESERVED
+        © {currentYear} BELOURAN — ALL RIGHTS RESERVED
       </p>
     </footer>
   );

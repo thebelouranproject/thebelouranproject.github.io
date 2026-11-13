@@ -1,5 +1,5 @@
-import { useRef, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useState, useCallback } from 'react';
+import { useNavigate } from 'react-router-dom';
 import type { Product } from '../../types';
 import './ProductCard.css';
 
@@ -47,7 +47,7 @@ function ProductRing({ text, color }: { text: string; color: string }) {
 export default function ProductCard({ product, index }: Props) {
   const [isHovered, setIsHovered] = useState(false);
   const [imgError, setImgError] = useState(false);
-  const cardRef = useRef<HTMLAnchorElement>(null);
+  const navigate = useNavigate();
 
   // Stagger entrance animation
   const style = {
@@ -57,16 +57,27 @@ export default function ProductCard({ product, index }: Props) {
 
   const ringText = `${product.soldOut ? 'SOLD OUT ·' : ""} ${product.name} · ${product.collection}`;
 
+  const handleClick = useCallback((e: React.MouseEvent) => {
+    e.preventDefault();
+    navigate('/product', { state: { productId: product.id } });
+  }, [navigate, product.id]);
+
   return (
-    <Link
-      to={`/products/${product.slug}`}
-      ref={cardRef}
+    <div
+      onClick={handleClick}
       className={`product-card${isHovered ? ' is-hovered' : ''}`}
-      style={style}
+      style={{ ...style, cursor: 'pointer' }}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       aria-label={`${product.name} — $${product.price}`}
       id={`product-card-${product.id}`}
+      role="button"
+      tabIndex={0}
+      onKeyDown={(e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          handleClick(e as any);
+        }
+      }}
     >
       {/* Spinning ring */}
       <div className={`product-ring-wrapper${isHovered ? ' is-active' : ''}`}>
@@ -99,6 +110,6 @@ export default function ProductCard({ product, index }: Props) {
           {product.soldOut ? 'SOLD OUT' : `$${product.price}`}
         </span>
       </div>
-    </Link>
+    </div>
   );
 }

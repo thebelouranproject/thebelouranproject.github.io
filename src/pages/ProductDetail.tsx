@@ -1,13 +1,20 @@
-import { useState } from 'react';
-import { useParams, Link, useNavigate } from 'react-router-dom';
-import { getProductBySlug } from '../data/products';
+import { useState, useEffect } from 'react';
+import { useLocation, Link, useNavigate } from 'react-router-dom';
+import { getProductById } from '../data/products';
 import { useCart } from '../context/CartContext';
 import './ProductDetail.css';
 
 export default function ProductDetail() {
-  const { slug } = useParams<{ slug: string }>();
+  const location = useLocation();
   const navigate = useNavigate();
-  const product = slug ? getProductBySlug(slug) : undefined;
+  const productId = location.state?.productId;
+  const product = productId ? getProductById(productId) : undefined;
+
+  useEffect(() => {
+    if (!productId) {
+      navigate('/', { replace: true });
+    }
+  }, [productId, navigate]);
   const { addItem } = useCart();
 
   const [selectedSize, setSelectedSize] = useState<string>('');

@@ -1,4 +1,4 @@
-import { createContext, useContext, useReducer, type ReactNode } from 'react';
+import { createContext, useContext, useReducer, useMemo, useCallback, type ReactNode } from 'react';
 import type { CartState, Product } from '../types';
 
 type CartAction =
@@ -79,23 +79,36 @@ const CartContext = createContext<CartContextValue | null>(null);
 export function CartProvider({ children }: { children: ReactNode }) {
   const [state, dispatch] = useReducer(cartReducer, initialState);
 
-  const addItem = (product: Product, size: string) =>
-    dispatch({ type: 'ADD_ITEM', product, size });
+  const addItem = useCallback((product: Product, size: string) =>
+    dispatch({ type: 'ADD_ITEM', product, size }), []);
 
-  const removeItem = (productId: string, size: string) =>
-    dispatch({ type: 'REMOVE_ITEM', productId, size });
+  const removeItem = useCallback((productId: string, size: string) =>
+    dispatch({ type: 'REMOVE_ITEM', productId, size }), []);
 
-  const toggleCart = () => dispatch({ type: 'TOGGLE_CART' });
-  const closeCart = () => dispatch({ type: 'CLOSE_CART' });
+  const toggleCart = useCallback(() => dispatch({ type: 'TOGGLE_CART' }), []);
+  const closeCart = useCallback(() => dispatch({ type: 'CLOSE_CART' }), []);
 
-  const totalItems = state.items.reduce((sum, i) => sum + i.quantity, 0);
-  const totalPrice = state.items.reduce(
+  const totalItems = useMemo(() => state.items.reduce((sum, i) => sum + i.quantity, 0), [state.items]);
+  const totalPrice = useMemo(() => state.items.reduce(
     (sum, i) => sum + i.product.price * i.quantity,
     0
+  ), [state.items]);
+
+  const value = useMemo(
+    () => ({
+      state,
+      addItem,
+      removeItem,
+      toggleCart,
+      closeCart,
+      totalItems,
+      totalPrice,
+    }),
+    [state, addItem, removeItem, toggleCart, closeCart, totalItems, totalPrice]
   );
 
   return (
-    <CartContext.Provider value={{ state, addItem, removeItem, toggleCart, closeCart, totalItems, totalPrice }}>
+    <CartContext.Provider value={value}>
       {children}
     </CartContext.Provider>
   );

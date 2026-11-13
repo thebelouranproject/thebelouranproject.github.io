@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { CartProvider } from './context/CartContext';
+import ErrorBoundary from './components/ErrorBoundary/ErrorBoundary';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 import Home from './pages/Home';
@@ -9,25 +10,27 @@ import './index.css';
 
 function App() {
   return (
-    <BrowserRouter>
-      <CartProvider>
-        <Header />
-        <div className="layout">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/manifesto" element={<Manifesto />} />
-            <Route path="/products/:slug" element={<ProductDetail />} />
-            {/* Placeholder routes */}
-            <Route path="/looks" element={<PlaceholderPage title="LOOKS" />} />
-            <Route path="/video" element={<PlaceholderPage title="VIDEO" />} />
-            <Route path="/stores" element={<PlaceholderPage title="STORES" />} />
-            <Route path="/archive" element={<PlaceholderPage title="ARCHIVE" />} />
-            <Route path="/contact" element={<PlaceholderPage title="CONTACT" />} />
-            <Route path="*" element={<PlaceholderPage title="NOT FOUND" />} />
-          </Routes>
-        </div>
-      </CartProvider>
-    </BrowserRouter>
+    <ErrorBoundary>
+      <BrowserRouter>
+        <CartProvider>
+          <Header />
+          <div className="layout">
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/manifesto" element={<Manifesto />} />
+              <Route path="/product" element={<ProductDetail />} />
+              {/* Placeholder routes */}
+              <Route path="/looks" element={<PlaceholderPage title="LOOKS" />} />
+              <Route path="/video" element={<PlaceholderPage title="VIDEO" />} />
+              <Route path="/stores" element={<PlaceholderPage title="STORES" />} />
+              <Route path="/archive" element={<PlaceholderPage title="ARCHIVE" />} />
+              <Route path="/contact" element={<PlaceholderPage title="CONTACT" />} />
+              <Route path="*" element={<PlaceholderPage title="NOT FOUND" />} />
+            </Routes>
+          </div>
+        </CartProvider>
+      </BrowserRouter>
+    </ErrorBoundary>
   );
 }
 
